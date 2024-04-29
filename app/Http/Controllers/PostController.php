@@ -17,6 +17,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::latest()->paginate(3);
+//        cbbchdhh
 
         return view('posts.index')->with('posts', $posts);
     }
