@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
@@ -14,4 +15,8 @@ Route::get('service', [PageController::class, 'service'])->name('service');
 Route::get('project', [PageController::class, 'project'])->name('project');
 Route::get('contact', [PageController::class, 'contact'])->name('contact');
 
-Route::resource('blog', PostController::class);
+Route::resources([
+    'blog' => PostController::class,
+    'comments' => CommentController::class,
+]);
+
