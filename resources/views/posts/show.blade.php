@@ -22,9 +22,7 @@
                     </div>
                     <div class="mb-5">
                         <div class="d-flex mb-2">
-                            <a class="text-secondary text-uppercase font-weight-medium" href="">Admin</a>
-                            <span class="text-primary px-2">|</span>
-                            <a class="text-secondary text-uppercase font-weight-medium" href="">Cleaning</a>
+                            <a class="bg-secondary rounded px-2 py-1 text-white text-uppercase font-weight-medium" href=""> {{ $blog->category->name }} </a>
                             <span class="text-primary px-2">|</span>
                             <a class="text-secondary text-uppercase font-weight-medium" href="">{{ $blog->created_at }}</a>
                         </div>

@@ -21,7 +21,7 @@ class PostFactory extends Factory
             'user_id' => User::inRandomOrder()->first()->id,
             'category_id' => rand(1, 5),
             'title' => $this->faker->sentence(),
-            'body' => $this->faker->paragraph(),
+            'body' => $this->faker->paragraph(25),
             'short_content' => $this->faker->paragraph(),
             'photo' => $this->faker->imageUrl(640, 480, 'nature', true, 'Faker'),
             'created_at' => $this->faker->dateTime(),

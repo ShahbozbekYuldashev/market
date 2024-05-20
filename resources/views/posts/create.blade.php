@@ -22,8 +22,22 @@
                                 <input type="text" class="form-control p-4" placeholder="Sarlavha kiriting"
                                        name="title" value="{{ old('title') }}"/>
                                 @error('title')
-                                  <p class="alert alert-danger m-3">{{ $message }}</p>
+                                <p class="alert alert-danger m-3">{{ $message }}</p>
                                 @enderror
+                            </div>
+                            <div class="control-group m-4">
+                                <select class="form-control" aria-label="Default select example" name="category_id">
+                                    @foreach( $categories as $tag)
+                                        <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="control-group m-4">
+                                <select class="form-control" name="category_id" multiple>
+                                    @foreach( $tags as $tag)
+                                        <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="control-group m-4">
                                 <textarea class="form-control p-4" rows="6" placeholder="Qisqa ta'rifini kiriting"
@@ -33,7 +47,8 @@
                                 @enderror
                             </div>
                             <div class="control-group m-4">
-                                <input type="file" class="form-control p-4 align-middle"  name="photo" id="photo" placeholder="Rasm yuklang">
+                                <input type="file" class="form-control p-4 align-middle" name="photo" id="photo"
+                                       placeholder="Rasm yuklang">
                                 @error('photo')
                                 <p class="alert alert-danger m-3">{{ $message }}</p>
                                 @enderror
